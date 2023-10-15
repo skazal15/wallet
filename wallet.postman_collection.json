@@ -1,0 +1,501 @@
+{
+	"info": {
+		"_postman_id": "9d468613-f268-4ece-8038-da76e3fec9f3",
+		"name": "wallet",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19741781"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"mobileNumber\":\"082283027464\",\r\n    \"password\":\"saidf223\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/user/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create new wallet",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"customerName\":\"said\",\r\n    \"mobileNumber\":\"082283027464\",\r\n    \"password\":\"saidf223\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/wallet/createaccount",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"wallet",
+						"createaccount"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get balance wallet",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/wallet/balance?key=niLtGn&mobileNumber=082283027464",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"wallet",
+						"balance"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "niLtGn"
+						},
+						{
+							"key": "mobileNumber",
+							"value": "082283027464"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deposit wallet",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/wallet/deposit/wallet?accountNo=2&amount=20000&key=9h3eGg",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"wallet",
+						"deposit",
+						"wallet"
+					],
+					"query": [
+						{
+							"key": "accountNo",
+							"value": "2"
+						},
+						{
+							"key": "amount",
+							"value": "20000"
+						},
+						{
+							"key": "key",
+							"value": "9h3eGg"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fund transfer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/wallet/transfer/mobile?mobile=082283027461&name=said&amount=20000&key=9h3eGg",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"wallet",
+						"transfer",
+						"mobile"
+					],
+					"query": [
+						{
+							"key": "mobile",
+							"value": "082283027461"
+						},
+						{
+							"key": "name",
+							"value": "said"
+						},
+						{
+							"key": "amount",
+							"value": "20000"
+						},
+						{
+							"key": "key",
+							"value": "9h3eGg"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add bill payment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/addBillPayment?targetMobile=082283027464&Name=said&amount=20000&BillType=belanja&key=9h3eGg",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"addBillPayment"
+					],
+					"query": [
+						{
+							"key": "targetMobile",
+							"value": "082283027464"
+						},
+						{
+							"key": "Name",
+							"value": "said"
+						},
+						{
+							"key": "amount",
+							"value": "20000"
+						},
+						{
+							"key": "BillType",
+							"value": "belanja"
+						},
+						{
+							"key": "key",
+							"value": "9h3eGg"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "show all transaction",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/transactions/wallet?key=9h3eGg",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"transactions",
+						"wallet"
+					],
+					"query": [
+						{
+							"key": "accountNo",
+							"value": "2",
+							"disabled": true
+						},
+						{
+							"key": "amount",
+							"value": "20000",
+							"disabled": true
+						},
+						{
+							"key": "key",
+							"value": "9h3eGg"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "show transaction by Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/transactions/transactionId?key=9h3eGg&transactionId=1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"transactions",
+						"transactionId"
+					],
+					"query": [
+						{
+							"key": "accountNo",
+							"value": "2",
+							"disabled": true
+						},
+						{
+							"key": "amount",
+							"value": "20000",
+							"disabled": true
+						},
+						{
+							"key": "key",
+							"value": "9h3eGg"
+						},
+						{
+							"key": "transactionId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "show transaction by range date",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/transactions/between?key=9h3eGg&one=2023-10-14&two=2023-10-15",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"transactions",
+						"between"
+					],
+					"query": [
+						{
+							"key": "accountNo",
+							"value": "2",
+							"disabled": true
+						},
+						{
+							"key": "amount",
+							"value": "20000",
+							"disabled": true
+						},
+						{
+							"key": "key",
+							"value": "9h3eGg"
+						},
+						{
+							"key": "transactionId",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "one",
+							"value": "2023-10-14"
+						},
+						{
+							"key": "two",
+							"value": "2023-10-15"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "show all transaction",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/transactions/all",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"transactions",
+						"all"
+					],
+					"query": [
+						{
+							"key": "accountNo",
+							"value": "2",
+							"disabled": true
+						},
+						{
+							"key": "amount",
+							"value": "20000",
+							"disabled": true
+						},
+						{
+							"key": "transactionId",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create bank account",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"accountNo\":\"00001\",\r\n    \"IFSCCode\":\"B0000S\",\r\n    \"bankName\":\"spacial\",\r\n    \"balance\":\"50000\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/customer/bankaccount/add?key=9h3eGg",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customer",
+						"bankaccount",
+						"add"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "9h3eGg"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get detail bank account",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/customer/bankaccount/details?key=9h3eGg&accountNo=1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customer",
+						"bankaccount",
+						"details"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "9h3eGg"
+						},
+						{
+							"key": "accountNo",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete bank account",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"accountNo\":\"00001\",\r\n    \"IFSCCode\":\"B0000S\",\r\n    \"bankName\":\"spacial\",\r\n    \"balance\":\"50000\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/customer/bankaccount/delete?key=9h3eGg",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customer",
+						"bankaccount",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "9h3eGg"
+						},
+						{
+							"key": "accountNo",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all bank account",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/customer/bankaccount/all?key=9h3eGg",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customer",
+						"bankaccount",
+						"all"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "9h3eGg"
+						},
+						{
+							"key": "accountNo",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
